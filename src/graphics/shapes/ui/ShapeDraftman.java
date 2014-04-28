@@ -110,8 +110,6 @@ public class ShapeDraftman implements ShapeVisitor {
 			for (Iterator<Shape> i = tmp.values().iterator() ; i.hasNext() ;){//on parcourt la Map
 			    i.next().accept(this);	//chaque shape de la collection accepte la visite du shapedraftman
 			}
-		}
-		
-		
+		}	
 	}
 }
