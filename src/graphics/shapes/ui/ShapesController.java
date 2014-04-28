@@ -1,5 +1,6 @@
 package graphics.shapes.ui;
 
+import graphics.shapes.SCollection;
 import graphics.shapes.Shape;
 import graphics.ui.Controller;
 
@@ -52,15 +53,15 @@ public class ShapesController extends Controller{
 	public Shape getTarget(int x, int y)
 	{
 		Point loc = new Point(x,y);
-		for (Iterator<Shape> j=((SCollection)this.model).collection.values().iterator() ; j.hasNext() ;)//on parcours toutes les formes de la fenêtre
+		for (Iterator<Shape> j=((SCollection)this.model).collection.values().iterator() ; j.hasNext() ;)//on parcours toutes les formes de la fenï¿½tre
 		{
-			//on vérifie pour chaque forme si les coordonnées correspondent
+			//on vÃ©rifie pour chaque forme si les coordonnÃ©es correspondent
 			if(j.getBounds() == loc)
 			{
-				return j;//si ça correspond bin on retourne la forme en question
+				return j;//si Ã§a correspond bin on retourne la forme en question
 			}
 		}
-		//si après parcours des formes on trouve rien on retourne rien
+		//si aprÃ©s parcours des formes on trouve rien on retourne rien
 		return null;
 	}
 
