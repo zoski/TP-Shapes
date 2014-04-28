@@ -57,7 +57,7 @@ public class ShapesController extends Controller{
 			//on vérifie pour chaque forme si les coordonnées correspondent
 			if(j.getBounds() == loc)
 			{
-				return j;
+				return j;//si ça correspond bin on retourne la forme en question
 			}
 		}
 		//si après parcours des formes on trouve rien on retourne rien
