@@ -1,0 +1,9 @@
+# ignore all bin directories
+# matches "bin" in any subfolder
+bin/
+
+# ignore all target directories
+td_shapes.pdf
+
+# ignore all files ending with ~
+*~ 
