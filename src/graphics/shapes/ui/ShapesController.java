@@ -1,7 +1,6 @@
 package graphics.shapes.ui;
 
 import graphics.ui.Controller;
-
 import java.awt.event.MouseEvent;
 
 public class ShapesController extends Controller{
