@@ -79,17 +79,17 @@ public class Editor extends JFrame
 //		t.addAttributes(new SelectionAttributes());
 //		this.model.add(t);
 //		
-//		SCollection sc = new SCollection();
+		SCollection sc = new SCollection(new Point(20,20));
 //		sc.addAttributes(new SelectionAttributes());
-//		r= new SRectangle(new Point(20,30),30,30);
-//		r.addAttributes(new ColorAttributes(true,false,Color.MAGENTA,Color.BLUE));
-//		r.addAttributes(new SelectionAttributes());
-//		sc.add(r);
-//		c = new SCircle(new Point(150,100),20);
-//		c.addAttributes(new ColorAttributes(false,true,Color.BLUE,Color.DARK_GRAY));
+		SRectangle r= new SRectangle(new Point(20,30),30,30);
+		r.addAttribute(new ColorAttributes(true,false,Color.MAGENTA,Color.BLUE));
+//		r.addAttribute(new SelectionAttributes());
+		sc.add(r);
+		SCircle c = new SCircle(new Point(150,100),20);
+		c.addAttribute(new ColorAttributes(false,true,Color.BLUE,Color.DARK_GRAY));
 //		c.addAttributes(new SelectionAttributes());
-//		sc.add(c);
-//		this.model.add(sc);
+		sc.add(c);
+		this.model.add(sc);
 	}
 	
 	public static void main(String[] args)
