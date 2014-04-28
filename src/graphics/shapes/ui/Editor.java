@@ -15,7 +15,7 @@ public class Editor extends JFrame
 	SCollection model= new SCollection(new Point(10,10));
 	
 	/*
-	 * TODO SCollection avec rect.union
+	 * TODO SCollection avec rect.union done
 	 * TODO Controleur
 	 *  TODO Rajouter un point permettant de gérer le déplacement
 	 * TODO Attributs de sélection
