@@ -1,5 +1,6 @@
 package graphics.shapes.ui;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -35,10 +36,11 @@ public class ShapeDraftman implements ShapeVisitor {
 		Rectangle rect = r.getBounds();
 		ColorAttributes ca = (ColorAttributes) r.getAttribute(ColorAttributes.ID);
 		SelectionAttributes sa = (SelectionAttributes) r.getAttribute(SelectionAttributes.ID);
-		if(sa.isSelected()){
-			g.drawRect(r.getLoc().x, r.getLoc().y, 5, 5);
-			g.drawRect(r.getLoc().x-r.getBounds().height, r.getLoc().y+r.getBounds().width, 5, 5);
-		}
+//		if(sa.isSelected()){
+//			g.drawRect(r.getLoc().x, r.getLoc().y, 5, 5);
+//			g.drawRect(r.getLoc().x-r.getBounds().height, r.getLoc().y+r.getBounds().width, 5, 5);
+//		}
+		
 		/* Verifions si il y  des attributs */
 		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES; /* S'il n'y en a† pas on met ceux du constructeur par defaut */
 		
@@ -53,11 +55,7 @@ public class ShapeDraftman implements ShapeVisitor {
 			g.drawRect(rect.x, rect.y, rect.width, rect.height);
 		}
 		
-		/* On dessine le contour apr√®s le fonds*/
-//		g.setColor(Color.RED);//on change la couleur de dessin
-//		g.drawRect(rect.x, rect.y, rect.width, rect.height);
-//		g.setColor(Color.BLUE);
-//		g.fillRect(rect.x+1, rect.y+1, rect.width-1, rect.height-1);
+
 		
 	}
 
@@ -104,8 +102,9 @@ public class ShapeDraftman implements ShapeVisitor {
 		
 		SelectionAttributes sa = (SelectionAttributes) t.getAttribute(SelectionAttributes.ID);
 		if(sa.isSelected()){
-			g.drawRect(t.getLoc().x, t.getLoc().y, 5, 5);
-			g.drawRect(t.getLoc().x-t.getBounds().height, t.getLoc().y+t.getBounds().width, 5, 5);
+			g.setColor(Color.GRAY);
+			g.drawRect(rect.x-4, rect.y-4, 8, 8);
+			g.drawRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
 		}
 		
 		g.setFont(fa.font);
