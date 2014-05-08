@@ -49,12 +49,12 @@ public class Editor extends JFrame
 	{
 		SText st = new SText(new Point(30, 30), "Hello");
 		st.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.RED));
-		st.addAttribute(new SelectionAttributes());
+		st.addAttribute(new SelectionAttributes(true));
 		this.model.add(st);
 		
 		SRectangle sr = new SRectangle(new Point(70,60),20,30);
 		sr.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.YELLOW));
-		//sr.addAttribute(new SelectionAttributes());
+		sr.addAttribute(new SelectionAttributes(true));
 		this.model.add(sr);
 //		
 //		SCircle sc = new SCircle(new Point(20,80), 20);
@@ -90,7 +90,7 @@ public class Editor extends JFrame
 		sc.add(r);
 		SCircle c = new SCircle(new Point(150,100),20);
 		c.addAttribute(new ColorAttributes(false,true,Color.BLUE,Color.DARK_GRAY));
-//		c.addAttributes(new SelectionAttributes());
+		c.addAttribute(new SelectionAttributes(true));
 		sc.add(c);
 		this.model.add(sc);
 	}
