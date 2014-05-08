@@ -17,7 +17,7 @@ public class ShapesView extends View {
 	}
 	
 	protected void paintComponent(Graphics g) {
-		// permet de représenter la vue
+		// permet de representer la vue
 		super.paintComponent(g);
 		System.out.println("Actualisation...");
 		
@@ -34,5 +34,4 @@ public class ShapesView extends View {
 	public Controller defaultController(Object model) {
 		return  new ShapesController(model);
 	}
-
 }
