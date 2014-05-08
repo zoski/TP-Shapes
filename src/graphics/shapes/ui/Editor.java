@@ -2,7 +2,6 @@ package graphics.shapes.ui;
 
 import graphics.shapes.*;
 import graphics.shapes.attributes.ColorAttributes;
-import graphics.shapes.attributes.SelectionAttributes;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -16,11 +15,11 @@ public class Editor extends JFrame
 	SCollection model= new SCollection(new Point(10,10));
 	
 	/*
-	 * 
+	 * TODO SCollection avec rect.union done
 	 * TODO Controleur
 	 * TODO Rajouter un point permettant de gérer le déplacement
 	 * TODO Attributs de sélection
-	 * TODO getTarget() dit s'il y a  une forme (référence) ou rien s'il n'y a  rien
+	 * TODO getTarget() dit s'il y Ã  une forme (référence) ou rien s'il n'y Ã  rien
 	 * TODO Finir le draftman
 	 *  
 	 */
@@ -40,7 +39,7 @@ public class Editor extends JFrame
 		this.buildModel();
 		
 		this.sview = new ShapesView(this.model);
-		this.sview.setPreferredSize(new Dimension(300,300));
+		this.sview.setPreferredSize(new Dimension(450,450));
 		this.getContentPane().add(this.sview, java.awt.BorderLayout.CENTER);
 	}
 
@@ -81,16 +80,20 @@ public class Editor extends JFrame
 //		this.model.add(t);
 //		
 		SCollection sc = new SCollection(new Point(20,20));
-		sc.addAttribute(new SelectionAttributes());
+//		sc.addAttributes(new SelectionAttributes());
 		SRectangle r= new SRectangle(new Point(20,30),30,30);
 		r.addAttribute(new ColorAttributes(true,false,Color.MAGENTA,Color.BLUE));
-		r.addAttribute(new SelectionAttributes());
+//		r.addAttribute(new SelectionAttributes());
 		sc.add(r);
 		SCircle c = new SCircle(new Point(150,100),20);
 		c.addAttribute(new ColorAttributes(false,true,Color.BLUE,Color.DARK_GRAY));
-		c.addAttribute(new SelectionAttributes());
+//		c.addAttributes(new SelectionAttributes());
 		sc.add(c);
 		this.model.add(sc);
+	}
+	
+	public SCollection getModel() {
+		return this.model;
 	}
 	
 	public static void main(String[] args)
