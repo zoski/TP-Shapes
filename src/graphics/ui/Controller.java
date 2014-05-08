@@ -1,18 +1,14 @@
 package graphics.ui;
 
-import graphics.shapes.SCollection;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import javax.xml.ws.handler.MessageContext.Scope;
-
 public class Controller implements MouseListener, MouseMotionListener, KeyListener
 {
-	private Object model;
+	protected Object model;
 	private View view;
 		
 	

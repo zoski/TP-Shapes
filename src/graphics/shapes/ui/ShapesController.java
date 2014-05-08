@@ -1,9 +1,15 @@
 package graphics.shapes.ui;
 
+import graphics.shapes.SCollection;
 import graphics.shapes.Shape;
 import graphics.ui.Controller;
 
+import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
+import java.util.Iterator;
+
+import graphics.shapes.ui.Editor;
 
 public class ShapesController extends Controller{
 
@@ -18,7 +24,7 @@ public class ShapesController extends Controller{
 		System.out.println("mouse pressed");
 		int x = e.getX();
 		int y = e.getY();
-		Shape s = this.getTarget(x, y);
+		Shape s = this.getTarget();
 		if(s != null)
 		{
 			//si on a une forme sous le click on selectionne la forme
@@ -36,35 +42,37 @@ public class ShapesController extends Controller{
 		int y = e.getY();
 		System.out.println("mouse clicked at ("+ x +", " + y +")");
 		
-		Shape s = this.getTarget(x, y);
+		Shape s = this.getTarget();
 		if(s != null)
 		{
-			//si on a une forme sous le click on selectionne la forme
+			
 		}
 	}
 	
+
 	public void mouseDragged(MouseEvent e)
 	{
 		System.out.println("mouse draged");
 	}
 	
-	public Shape getTarget(int x, int y) {
-		Shape s ;
+	public Shape getTarget() {
 		
 		
+		
+		Shape s = null;
 		
 		
 		return s;
-//		for (Iterator<Shape> j=((SCollection)this.model).collection.values().iterator() ; j.hasNext() ;)//on parcours toutes les formes de la fenetre
-//		{
-//			//on verifie pour chaque forme si les coordonnees correspondent
-//			if(j.getBounds() == loc)
-//			{
-//				return j;//si ca correspond bin on retourne la forme en question
-//			}
-//		}
-//		//si apres parcours des formes on trouve rien on retourne rien
-//		return null;
-	}
 
+//		for ( it=((Controller) this.model).getModel()collection.values().iterator() ; it.hasNext() ;)//on parcours toutes les formes de la fenetre
+//			{
+//				//on verifie pour chaque forme si les coordonnees correspondent
+//				if(((Shape) it).getBounds().contains(new Point(x,y))) {
+//					System.out.println("Forme trouve");
+//					return it.;//si ca correspond bin on retourne la forme en question
+//				}
+//			}
+//		return null;
+//	}
+	}
 }

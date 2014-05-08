@@ -39,7 +39,7 @@ public class Editor extends JFrame
 		this.buildModel();
 		
 		this.sview = new ShapesView(this.model);
-		this.sview.setPreferredSize(new Dimension(300,300));
+		this.sview.setPreferredSize(new Dimension(450,450));
 		this.getContentPane().add(this.sview, java.awt.BorderLayout.CENTER);
 	}
 
@@ -90,6 +90,10 @@ public class Editor extends JFrame
 //		c.addAttributes(new SelectionAttributes());
 		sc.add(c);
 		this.model.add(sc);
+	}
+	
+	public SCollection getModel() {
+		return this.model;
 	}
 	
 	public static void main(String[] args)
