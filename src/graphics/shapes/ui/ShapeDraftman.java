@@ -14,6 +14,7 @@ import graphics.shapes.Shape;
 import graphics.shapes.ShapeVisitor;
 import graphics.shapes.attributes.ColorAttributes;
 import graphics.shapes.attributes.FontAttributes;
+import graphics.shapes.attributes.SelectionAttributes;
 
 public class ShapeDraftman implements ShapeVisitor {
 	
@@ -33,6 +34,11 @@ public class ShapeDraftman implements ShapeVisitor {
 		//Dessine
 		Rectangle rect = r.getBounds();
 		ColorAttributes ca = (ColorAttributes) r.getAttribute(ColorAttributes.ID);
+		SelectionAttributes sa = (SelectionAttributes) r.getAttribute(SelectionAttributes.ID);
+		if(sa.isSelected()){
+			g.drawRect(r.getLoc().x, r.getLoc().y, 5, 5);
+			g.drawRect(r.getLoc().x-r.getBounds().height, r.getLoc().y+r.getBounds().width, 5, 5);
+		}
 		/* Verifions si il y  des attributs */
 		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES; /* S'il n'y en a  pas on met ceux du constructeur par defaut */
 		
@@ -95,6 +101,13 @@ public class ShapeDraftman implements ShapeVisitor {
 			g.setColor(ca.strokedColor);
 			g.drawRect(rect.x, rect.y, rect.width, rect.height);
 		}
+		
+		SelectionAttributes sa = (SelectionAttributes) t.getAttribute(SelectionAttributes.ID);
+		if(sa.isSelected()){
+			g.drawRect(t.getLoc().x, t.getLoc().y, 5, 5);
+			g.drawRect(t.getLoc().x-t.getBounds().height, t.getLoc().y+t.getBounds().width, 5, 5);
+		}
+		
 		g.setFont(fa.font);
 		g.setColor(fa.fontColor);
 		g.drawString(t.getText(), loc.x, loc.y);

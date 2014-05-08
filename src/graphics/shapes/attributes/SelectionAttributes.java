@@ -13,7 +13,7 @@ public class SelectionAttributes extends Attribute
 	
 	public SelectionAttributes()
 	{
-		this.selected = false;
+		this.selected = true;
 	}
 	
 	public boolean isSelected()
