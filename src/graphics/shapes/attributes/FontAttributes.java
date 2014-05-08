@@ -12,7 +12,7 @@ public class FontAttributes extends Attribute{
 	public Font font;
 	public Color fontColor;
 	
-	//j'instancie une image mémoire afin de récupérer sont graphics
+	//j'instancie une image memoire afin de recuperer son graphics
 	public static final Graphics2D DEFAULT_GRAPHICS = (Graphics2D) new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB).getGraphics();
 	
 	 
@@ -27,7 +27,7 @@ public class FontAttributes extends Attribute{
 	}
 	
 	public Rectangle getBounds(String s) {
-		//TODO Le rectangle récupéré est à la bonne taille mais au coordonnée O,O il faut le déplacer avec translate.
+		//TODO Le rectangle recupere est a� la bonne taille mais au coordonnee 0,0 il faut le deplacer avec translate.
 		FontRenderContext frc = DEFAULT_GRAPHICS.getFontRenderContext();
 		Rectangle bound = font.getStringBounds(s, frc).getBounds();
 		return bound;

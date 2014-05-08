@@ -8,7 +8,6 @@ public class SelectionAttributes extends Attribute
 	
 	@Override
 	public String getId() {
-		// TODO Auto-generated method stub
 		return this.ID;
 	}
 	

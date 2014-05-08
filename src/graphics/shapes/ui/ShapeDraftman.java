@@ -33,8 +33,8 @@ public class ShapeDraftman implements ShapeVisitor {
 		//Dessine
 		Rectangle rect = r.getBounds();
 		ColorAttributes ca = (ColorAttributes) r.getAttribute(ColorAttributes.ID);
-		/* Vérifions si il y  des attributs */
-		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES; /* S'il n'y en à pas on met ceux du constructeur par défaut */
+		/* Verifions si il y  des attributs */
+		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES; /* S'il n'y en a� pas on met ceux du constructeur par defaut */
 		
 		/* S'il y a on applique */
 		if(ca.filled) {		//Remplissage
@@ -59,8 +59,8 @@ public class ShapeDraftman implements ShapeVisitor {
 	public void visitCircle(SCircle c) {
 		Rectangle rect = c.getBounds();
 		ColorAttributes ca = (ColorAttributes) c.getAttribute(ColorAttributes.ID);
-		/* Vérifions si il y  des attributs */
-		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES; /* S'il n'y en à pas on met ceux du constructeur par défaut */
+		/* Verifions si il y  des attributs */
+		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES; /* S'il n'y en a pas on met ceux du constructeur par defaut */
 		
 		/* S'il y a on applique */
 		if(ca.filled) {
@@ -80,7 +80,7 @@ public class ShapeDraftman implements ShapeVisitor {
 		ColorAttributes ca = (ColorAttributes) t.getAttribute(ColorAttributes.ID);
 		Point loc = t.getLoc(); 
 		
-		/* Vérifions si il y  des attributs */
+		/* Verifions si il y  des attributs */
 		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES;
 		
 		FontAttributes fa = (FontAttributes) t.getAttribute(FontAttributes.ID);

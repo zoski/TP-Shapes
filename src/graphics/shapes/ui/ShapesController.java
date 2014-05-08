@@ -1,12 +1,9 @@
 package graphics.shapes.ui;
 
-import graphics.shapes.SCollection;
 import graphics.shapes.Shape;
 import graphics.ui.Controller;
 
-import java.awt.Point;
 import java.awt.event.MouseEvent;
-import java.util.Iterator;
 
 public class ShapesController extends Controller{
 
@@ -14,7 +11,7 @@ public class ShapesController extends Controller{
 		super(newModel);
 	}
 	
-	/* Il est nécessaire de redéfinir les actions voir pdf*/
+	/* Il est necessaire de redefinir les actions voir pdf*/
 	
 	public void mousePressed(MouseEvent e)
 	{
@@ -35,9 +32,10 @@ public class ShapesController extends Controller{
 
 	public void mouseClicked(MouseEvent e) 
 	{
-		System.out.println("mouse clicked");
 		int x = e.getX();
 		int y = e.getY();
+		System.out.println("mouse clicked at ("+ x +", " + y +")");
+		
 		Shape s = this.getTarget(x, y);
 		if(s != null)
 		{
@@ -50,19 +48,23 @@ public class ShapesController extends Controller{
 		System.out.println("mouse draged");
 	}
 	
-	public Shape getTarget(int x, int y)
-	{
-		Point loc = new Point(x,y);
-		for (Iterator<Shape> j=((SCollection)this.model).collection.values().iterator() ; j.hasNext() ;)//on parcours toutes les formes de la fen�tre
-		{
-			//on vérifie pour chaque forme si les coordonnées correspondent
-			if(j.getBounds() == loc)
-			{
-				return j;//si ça correspond bin on retourne la forme en question
-			}
-		}
-		//si aprés parcours des formes on trouve rien on retourne rien
-		return null;
+	public Shape getTarget(int x, int y) {
+		Shape s ;
+		
+		
+		
+		
+		return s;
+//		for (Iterator<Shape> j=((SCollection)this.model).collection.values().iterator() ; j.hasNext() ;)//on parcours toutes les formes de la fenetre
+//		{
+//			//on verifie pour chaque forme si les coordonnees correspondent
+//			if(j.getBounds() == loc)
+//			{
+//				return j;//si ca correspond bin on retourne la forme en question
+//			}
+//		}
+//		//si apres parcours des formes on trouve rien on retourne rien
+//		return null;
 	}
 
 }
