@@ -46,6 +46,7 @@ public class ShapesController extends Controller{
 	public void mouseDragged(MouseEvent e)
 	{
 		System.out.println("mouse draged");
+		
 	}
 	
 	public Shape getTarget(int x, int y) {

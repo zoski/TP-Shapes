@@ -11,6 +11,11 @@ public class SelectionAttributes extends Attribute
 		return this.ID;
 	}
 	
+	public SelectionAttributes()
+	{
+		this.selected = false;
+	}
+	
 	public boolean isSelected()
 	{
 		return this.selected;

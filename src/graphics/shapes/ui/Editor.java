@@ -2,6 +2,7 @@ package graphics.shapes.ui;
 
 import graphics.shapes.*;
 import graphics.shapes.attributes.ColorAttributes;
+import graphics.shapes.attributes.SelectionAttributes;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -80,14 +81,14 @@ public class Editor extends JFrame
 //		this.model.add(t);
 //		
 		SCollection sc = new SCollection(new Point(20,20));
-//		sc.addAttributes(new SelectionAttributes());
+		sc.addAttribute(new SelectionAttributes());
 		SRectangle r= new SRectangle(new Point(20,30),30,30);
 		r.addAttribute(new ColorAttributes(true,false,Color.MAGENTA,Color.BLUE));
-//		r.addAttribute(new SelectionAttributes());
+		r.addAttribute(new SelectionAttributes());
 		sc.add(r);
 		SCircle c = new SCircle(new Point(150,100),20);
 		c.addAttribute(new ColorAttributes(false,true,Color.BLUE,Color.DARK_GRAY));
-//		c.addAttributes(new SelectionAttributes());
+		c.addAttribute(new SelectionAttributes());
 		sc.add(c);
 		this.model.add(sc);
 	}
