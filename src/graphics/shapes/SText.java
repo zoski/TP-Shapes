@@ -52,7 +52,4 @@ public class SText extends Shape{
 		return this.ID;
 	}
 
-
-	
-
 }

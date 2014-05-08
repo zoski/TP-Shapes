@@ -8,17 +8,14 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public abstract class Shape {
-	private Map attributes;
+	private Map<String, Attribute> attributes;
 	Point location;
 	
 
 	public Shape() {
-		this.attributes = new TreeMap();
+		this.attributes = new TreeMap<String, Attribute>();
 	}
 	
-
-	
-	@SuppressWarnings("unchecked")
 	public void addAttribute(Attribute a) {
 		this.attributes.put(a.getId(),a);
 	}

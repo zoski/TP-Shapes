@@ -1,19 +1,23 @@
 package graphics.shapes.attributes;
 
-public class SelectionAttributes extends Attribute 
-{
+public class SelectionAttributes extends Attribute  {
 
 	public static final String ID = "selection";
 	private boolean selected;
 	
 	@Override
 	public String getId() {
-		return this.ID;
+		return SelectionAttributes.ID;
 	}
 	
 	public SelectionAttributes()
 	{
-		this.selected = true;
+		this.selected = false;
+	}
+	
+	public SelectionAttributes(boolean state)
+	{
+		this.selected = state;
 	}
 	
 	public boolean isSelected()
