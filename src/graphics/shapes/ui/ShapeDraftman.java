@@ -30,16 +30,17 @@ public class ShapeDraftman implements ShapeVisitor {
 	@Override
 	public void visitRectangle(SRectangle r) {
 	
-		System.out.println("Je dessine un rectangle\n" + r.getBounds());
+		System.out.println("I'm drawing a SRectangle : " + r.getBounds());
 		
 		//Dessine
 		Rectangle rect = r.getBounds();
 		ColorAttributes ca = (ColorAttributes) r.getAttribute(ColorAttributes.ID);
-		SelectionAttributes sa = (SelectionAttributes) r.getAttribute(SelectionAttributes.ID);
-		if(sa.isSelected()){
-			g.drawRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
-			g.drawRect(r.getLoc().x-rect.width, r.getLoc().y+rect.height, 8, 8);
-		}
+		
+//		SelectionAttributes sa = (SelectionAttributes) r.getAttribute(SelectionAttributes.ID);
+//		if(sa.isSelected()){
+//			g.drawRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
+//			g.drawRect(r.getLoc().x-rect.width, r.getLoc().y+rect.height, 8, 8);
+//		}
 		
 		/* Verifions si il y  des attributs */
 		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES; /* S'il n'y en a� pas on met ceux du constructeur par defaut */
@@ -58,6 +59,8 @@ public class ShapeDraftman implements ShapeVisitor {
 
 	@Override
 	public void visitCircle(SCircle c) {
+		System.out.println("I'm drawing a SCircle :" + c.getBounds());
+		
 		Rectangle rect = c.getBounds();
 		ColorAttributes ca = (ColorAttributes) c.getAttribute(ColorAttributes.ID);
 		/* Verifions si il y  des attributs */
@@ -76,6 +79,8 @@ public class ShapeDraftman implements ShapeVisitor {
 	}
 
 	public void visitText(SText t) {
+		System.out.println("I'm drawing a SText :" + t.getBounds());
+		
 		Rectangle rect = t.getBounds();
 		rect.translate(0, -rect.width/2);
 		ColorAttributes ca = (ColorAttributes) t.getAttribute(ColorAttributes.ID);
@@ -111,6 +116,8 @@ public class ShapeDraftman implements ShapeVisitor {
 
 	@Override
 	public void visitCollection(SCollection co) {
+		System.out.println("I'm drawing a SCollection :" + co.getBounds());
+		
 		Map<String, Shape> tmp = co.getMap();
 		Rectangle rect = co.getBounds();
 		

@@ -14,7 +14,7 @@ public class SCollection extends Shape{
 	public SCollection (Point loc) {
 		this.collection = new TreeMap<String, Shape>();
 		this.loc=loc;
-		System.out.println("Collection created...");
+		System.out.println("SCollection created...");
 	}
 	
 	@Override
@@ -38,7 +38,7 @@ public class SCollection extends Shape{
 		for (Iterator<Shape> j=collection.values().iterator() ; j.hasNext() ;){	//on parcourt la Map
 		   bound = j.next().getBounds().union(bound);				//On fait l'union successive de toute les shapes de la map
 		}
-		System.out.println("get bound de la collection " + bound);
+		System.out.println("SCollection GetBound : " + bound);
 		return bound;
 	}
 	
@@ -61,8 +61,6 @@ public class SCollection extends Shape{
 	}
 	
 	public String toString() {
-		StringBuffer tmp = new StringBuffer();
-		tmp.append(this.getBounds());
-		return (String)tmp.toString();
+		return this.getBounds().toString();
 	}
 }
