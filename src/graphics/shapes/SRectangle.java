@@ -1,15 +1,19 @@
 package graphics.shapes;
 
+import graphics.shapes.attributes.SelectionAttributes;
+
 import java.awt.Point;
 import java.awt.Rectangle;
 
 public class SRectangle extends Shape {
 	private Rectangle rect;
 	private final  String ID="Rectangle";
+	private SelectionAttributes sa;
 	
 	public SRectangle(Point p, int width, int height) {
 		this.rect = new Rectangle(p.x, p.y ,width, height);
-		System.out.println("Rectangle created...");
+		this.sa = new SelectionAttributes();
+		System.out.println("New SRectangle created... Is selected : "+sa.isSelected());
 	}
 
 	@Override

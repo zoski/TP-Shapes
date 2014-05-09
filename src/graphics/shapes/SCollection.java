@@ -65,12 +65,4 @@ public class SCollection extends Shape{
 		tmp.append(this.getBounds());
 		return (String)tmp.toString();
 	}
-	
-	
-	
-
-	
-	
-	
-
 }

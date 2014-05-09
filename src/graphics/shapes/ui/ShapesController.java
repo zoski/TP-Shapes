@@ -36,10 +36,8 @@ public class ShapesController extends Controller{
 		System.out.println("mouse released");
 	}
 
-	public void mouseClicked(MouseEvent e) 
-	{
-		int x = e.getX();
-		int y = e.getY();
+	public void mouseClicked(MouseEvent e) {
+		int x = e.getX();int y = e.getY();
 		System.out.println("mouse clicked at ("+ x +", " + y +")");
 		
 		Shape s = this.getTarget();
@@ -56,6 +54,7 @@ public class ShapesController extends Controller{
 	}
 	
 	public Shape getTarget() {
+		/* Doit retourner la forme sur laquelle on clic ou rien */
 		
 		
 		
@@ -73,6 +72,5 @@ public class ShapesController extends Controller{
 //				}
 //			}
 //		return null;
-//	}
 	}
 }
