@@ -36,11 +36,11 @@ public class ShapeDraftman implements ShapeVisitor {
 		Rectangle rect = r.getBounds();
 		ColorAttributes ca = (ColorAttributes) r.getAttribute(ColorAttributes.ID);
 		
-//		SelectionAttributes sa = (SelectionAttributes) r.getAttribute(SelectionAttributes.ID);
-//		if(sa.isSelected()){
-//			g.drawRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
-//			g.drawRect(r.getLoc().x-rect.width, r.getLoc().y+rect.height, 8, 8);
-//		}
+		SelectionAttributes sa = (SelectionAttributes) r.getAttribute(SelectionAttributes.ID);
+		if(sa.isSelected()){
+			g.drawRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
+			g.drawRect(r.getLoc().x-rect.width, r.getLoc().y+rect.height, 8, 8);
+		}
 		
 		/* Verifions si il y  des attributs */
 		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES; /* S'il n'y en a� pas on met ceux du constructeur par defaut */
@@ -63,6 +63,7 @@ public class ShapeDraftman implements ShapeVisitor {
 		
 		Rectangle rect = c.getBounds();
 		ColorAttributes ca = (ColorAttributes) c.getAttribute(ColorAttributes.ID);
+		SelectionAttributes sa = (SelectionAttributes) c.getAttribute(SelectionAttributes.ID);
 		/* Verifions si il y  des attributs */
 		if(ca==null) ca = DEFAULT_COLOR_ATTRIBUTES; /* S'il n'y en a pas on met ceux du constructeur par defaut */
 		
@@ -75,6 +76,12 @@ public class ShapeDraftman implements ShapeVisitor {
 		if(ca.stroked) {
 			g.setColor(ca.strokedColor);
 			g.drawOval(rect.x, rect.y, rect.width, rect.height);
+		}
+		if(sa.isSelected())
+		{
+			g.setColor(Color.GRAY);
+			g.drawRect(rect.x-4, rect.y-4, 8, 8);
+			g.drawRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
 		}
 	}
 
