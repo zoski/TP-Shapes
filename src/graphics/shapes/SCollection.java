@@ -63,4 +63,5 @@ public class SCollection extends Shape{
 	public String toString() {
 		return this.getBounds().toString();
 	}
+	
 }

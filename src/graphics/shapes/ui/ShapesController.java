@@ -12,6 +12,8 @@ import java.util.Iterator;
 import graphics.shapes.ui.Editor;
 
 public class ShapesController extends Controller{
+	
+	private Point clicLoc;
 
 	public ShapesController(Object newModel) {
 		super(newModel);
@@ -22,12 +24,11 @@ public class ShapesController extends Controller{
 	public void mousePressed(MouseEvent e)
 	{
 		System.out.println("mouse pressed");
-		int x = e.getX();
-		int y = e.getY();
+		this.clicLoc = new Point(e.getX(),e.getY());
 		Shape s = this.getTarget();
 		if(s != null)
 		{
-			//si on a une forme sous le click on selectionne la forme
+			//si on a une forme sous le clic on selectionne la forme
 		}
 	}
 
@@ -53,24 +54,35 @@ public class ShapesController extends Controller{
 		System.out.println("mouse draged");
 	}
 	
-	public Shape getTarget() {
-		/* Doit retourner la forme sur laquelle on clic ou rien */
-		
-		
-		
+	public Shape getTargetArg(Shape r)
+	{
 		Shape s = null;
 		
+		//si la shape est une collection on parcours la collection et on rappelle getTarget()
+		if(r instanceof SCollection)
+		{
+		Iterator<Shape> it = (((SCollection)r).getMap()).values().iterator();
+		
+			//on parcours la map
+			while(it.hasNext())
+			{
+				s = getTargetArg(it.next());
+			}
+		}
+		
+		//quand c'est pas une collection on regarde si le clic est dans la forme
+		if(r.getBounds().contains(this.clicLoc))
+		{
+			s = r;
+		}
 		
 		return s;
-
-//		for ( it=((Controller) this.model).getModel()collection.values().iterator() ; it.hasNext() ;)//on parcours toutes les formes de la fenetre
-//			{
-//				//on verifie pour chaque forme si les coordonnees correspondent
-//				if(((Shape) it).getBounds().contains(new Point(x,y))) {
-//					System.out.println("Forme trouve");
-//					return it.;//si ca correspond bin on retourne la forme en question
-//				}
-//			}
-//		return null;
 	}
+	
+	public Shape getTarget() 
+	{
+		/* Doit retourner la forme sur laquelle on clic ou rien */
+		return getTargetArg((Shape)super.getModel());
+	}
+
 }
