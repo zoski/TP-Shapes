@@ -38,8 +38,8 @@ public class ShapeDraftman implements ShapeVisitor {
 		
 		SelectionAttributes sa = (SelectionAttributes) r.getAttribute(SelectionAttributes.ID);
 		if(sa.isSelected()){
-			g.drawRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
-			g.drawRect(r.getLoc().x-rect.width, r.getLoc().y+rect.height, 8, 8);
+			g.fillRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
+			g.fillRect(r.getLoc().x-rect.width, r.getLoc().y+rect.height, 8, 8);
 		}
 		
 		/* Verifions si il y  des attributs */
@@ -80,8 +80,8 @@ public class ShapeDraftman implements ShapeVisitor {
 		if(sa.isSelected())
 		{
 			g.setColor(Color.GRAY);
-			g.drawRect(rect.x-4, rect.y-4, 8, 8);
-			g.drawRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
+			g.fillRect(rect.x-4, rect.y-4, 8, 8);
+			g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
 		}
 	}
 
@@ -112,8 +112,8 @@ public class ShapeDraftman implements ShapeVisitor {
 		SelectionAttributes sa = (SelectionAttributes) t.getAttribute(SelectionAttributes.ID);
 		if(sa.isSelected()){
 			g.setColor(Color.GRAY);
-			g.drawRect(rect.x-4, rect.y-4, 8, 8);
-			g.drawRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
+			g.fillRect(rect.x-4, rect.y-4, 8, 8);
+			g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
 		}
 		
 		g.setFont(fa.font);
