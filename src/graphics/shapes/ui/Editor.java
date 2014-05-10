@@ -49,7 +49,7 @@ public class Editor extends JFrame
 	{
 		SText st = new SText(new Point(30, 30), "Hello");
 		st.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.RED));
-		st.addAttribute(new SelectionAttributes(true));
+		st.addAttribute(new SelectionAttributes());
 		this.model.add(st);
 		
 		SRectangle sr = new SRectangle(new Point(70,60),20,30);
