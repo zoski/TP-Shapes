@@ -1,6 +1,7 @@
 package graphics.shapes;
 
 import graphics.shapes.attributes.Attribute;
+import graphics.shapes.attributes.SelectionAttributes;
 
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -22,6 +23,12 @@ public abstract class Shape {
 	
 	public Attribute getAttribute(String id) {
 		return (Attribute) this.attributes.get(id);
+	}
+	
+	public void select()
+	{
+		SelectionAttributes sa = (SelectionAttributes) getAttribute(SelectionAttributes.ID);
+		sa.select();
 	}
 	
 	public abstract Point getLoc();

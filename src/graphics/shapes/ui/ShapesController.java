@@ -28,7 +28,7 @@ public class ShapesController extends Controller{
 		Shape s = this.getTarget();
 		if(s != null)
 		{
-			//si on a une forme sous le clic on selectionne la forme
+			s.select();
 		}
 	}
 
@@ -37,14 +37,13 @@ public class ShapesController extends Controller{
 		System.out.println("mouse released");
 	}
 
-	public void mouseClicked(MouseEvent e) {
-		int x = e.getX();int y = e.getY();
-		System.out.println("mouse clicked at ("+ x +", " + y +")");
-		
+	public void mouseClicked(MouseEvent e) 
+	{
+		this.clicLoc = new Point(e.getX(),e.getY());
 		Shape s = this.getTarget();
 		if(s != null)
 		{
-			
+			s.select();
 		}
 	}
 	
