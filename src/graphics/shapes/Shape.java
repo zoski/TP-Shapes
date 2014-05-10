@@ -31,6 +31,12 @@ public abstract class Shape {
 		sa.select();
 	}
 	
+	public boolean isSelected()
+	{
+		SelectionAttributes sa = (SelectionAttributes) getAttribute(SelectionAttributes.ID);
+		return sa.isSelected();
+	}
+	
 	public abstract Point getLoc();
 	public abstract void setLoc(Point p);	
 	public abstract void translate(int dx, int dy);

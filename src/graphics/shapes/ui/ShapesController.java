@@ -51,6 +51,13 @@ public class ShapesController extends Controller{
 	public void mouseDragged(MouseEvent e)
 	{
 		System.out.println("mouse draged");
+		int x = e.getX();
+		int y = e.getY();
+		Shape s = getTarget();
+		if((s!= null) && s.isSelected())
+		{
+			translateSelected(x,y);
+		}
 	}
 	
 	public Shape getTargetArg(Shape r)
@@ -82,6 +89,12 @@ public class ShapesController extends Controller{
 	{
 		/* Doit retourner la forme sur laquelle on clic ou rien */
 		return getTargetArg((Shape)super.getModel());
+	}
+	
+	public void translateSelected(int x, int y)
+	{
+		Shape s = getTarget();
+		s.translate(x,y);
 	}
 
 }
