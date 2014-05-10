@@ -13,7 +13,6 @@ public class SRectangle extends Shape {
 	public SRectangle(Point p, int width, int height) {
 		this.rect = new Rectangle(p.x, p.y ,width, height);
 		this.sa = new SelectionAttributes();
-		System.out.println("SRectangle created... Is selected : "+sa.isSelected());
 	}
 
 	@Override
