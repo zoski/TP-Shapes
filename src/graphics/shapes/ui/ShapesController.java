@@ -42,12 +42,12 @@ public class ShapesController extends Controller {
 	}
 
 	public void mouseDragged(MouseEvent e) {
-		System.out.println("mouse draged");
 		int x = e.getX();
 		int y = e.getY();
+		System.out.println("mouse dragged at x="+x+"y="+y);
 		Shape s = getTarget();
 		if ((s != null) && s.isSelected()) {
-			translateSelected(x, y);
+			translateSelected(this.clicLoc.x-x, this.clicLoc.y-y);
 			this.getView().updateUI();
 		}
 	}
