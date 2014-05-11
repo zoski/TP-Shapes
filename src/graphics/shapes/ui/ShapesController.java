@@ -39,16 +39,25 @@ public class ShapesController extends Controller {
 			s.select();
 			this.getView().updateUI();
 		}
+		else {/* On parcourt le model et on déselect toutes les shape */
+			Iterator<Shape> it = (((SCollection) super.getModel()).getMap()).values().iterator();
+
+			// on parcours la map
+			while (it.hasNext()) {
+				it.next().unSelect();
+			}
+		}
 	}
 
 	public void mouseDragged(MouseEvent e) {
 		int x = e.getX();
 		int y = e.getY();
-		System.out.println("mouse dragged at x="+x+"y="+y);
+		System.out.println("mouse dragged");
 		Shape s = getTarget();
 		if ((s != null) && s.isSelected()) {
-			translateSelected(this.clicLoc.x-x, this.clicLoc.y-y);
+			translateSelected(x-this.clicLoc.x, y-this.clicLoc.y);
 			this.getView().updateUI();
+			this.clicLoc = new Point(e.getX(),e.getY());
 		}
 	}
 

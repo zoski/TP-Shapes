@@ -35,6 +35,10 @@ public abstract class Shape {
 		return sa.isSelected();
 	}
 
+	public void unSelect() {
+		SelectionAttributes sa = (SelectionAttributes) getAttribute(SelectionAttributes.ID);
+		sa.unselect();
+	}
 	public abstract Point getLoc();
 
 	public abstract void setLoc(Point p);

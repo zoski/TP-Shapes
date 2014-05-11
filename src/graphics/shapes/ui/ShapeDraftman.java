@@ -34,11 +34,10 @@ public class ShapeDraftman implements ShapeVisitor {
 
 		// Dessine
 		Rectangle rect = r.getBounds();
-		ColorAttributes ca = (ColorAttributes) r
-				.getAttribute(ColorAttributes.ID);
+		ColorAttributes ca = (ColorAttributes) r.getAttribute(ColorAttributes.ID);
 
-		 SelectionAttributes sa = (SelectionAttributes)
-		 r.getAttribute(SelectionAttributes.ID);
+		 SelectionAttributes sa = (SelectionAttributes)r.getAttribute(SelectionAttributes.ID);
+		 
 		 if(sa.isSelected()){
 			 g.setColor(Color.GRAY);
 			 g.fillRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
