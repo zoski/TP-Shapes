@@ -23,6 +23,9 @@ public class ShapesController extends Controller {
 		if (s != null) {
 			System.out.println("Shape found :" + s + "is selected");
 			s.select();
+			if (s.isSelected()){
+				System.out.println("shape selected");
+			}
 			this.getView().updateUI();
 		}
 	}
@@ -37,6 +40,9 @@ public class ShapesController extends Controller {
 		if (s != null) {
 			System.out.println("Shape detected");
 			s.select();
+			if (s.isSelected()){
+				System.out.println("shape selected");
+			}
 			this.getView().updateUI();
 		}
 	}
