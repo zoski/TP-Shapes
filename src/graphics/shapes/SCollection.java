@@ -39,15 +39,10 @@ public class SCollection extends Shape {
 		bound = i.next().getBounds();// On place le getBound de la premiere
 										// forme de la map comme point de départ
 
-		for (Iterator<Shape> j = collection.values().iterator(); j.hasNext();) { // on
-																					// parcourt
-																					// la
-																					// Map
-			bound = j.next().getBounds().union(bound); // On fait l'union
-														// successive de toute
-														// les shapes de la map
+		for (Iterator<Shape> j = collection.values().iterator(); j.hasNext();) { // on parcourt la Map
+			bound = j.next().getBounds().union(bound); // On fait l'union successive de toute les shapes de la map
 		}
-		System.out.println("SCollection GetBound : " + bound);
+
 		return bound;
 	}
 

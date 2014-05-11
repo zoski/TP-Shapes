@@ -27,6 +27,7 @@ public abstract class Shape {
 	public void select() {
 		SelectionAttributes sa = (SelectionAttributes) getAttribute(SelectionAttributes.ID);
 		sa.select();
+		System.out.println("We try to select");
 	}
 
 	public boolean isSelected() {

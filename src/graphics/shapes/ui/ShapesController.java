@@ -57,8 +57,7 @@ public class ShapesController extends Controller {
 		// si la shape est une collection on parcours la collection et on
 		// rappelle getTarget()
 		if (r instanceof SCollection) {
-			Iterator<Shape> it = (((SCollection) r).getMap()).values()
-					.iterator();
+			Iterator<Shape> it = (((SCollection) r).getMap()).values().iterator();
 
 			// on parcours la map
 			while (it.hasNext()) {
@@ -66,9 +65,8 @@ public class ShapesController extends Controller {
 			}
 		}
 
-		// quand c'est pas une collection on regarde si le clic est dans la
-		// forme
-		if (r.getBounds().contains(this.clicLoc)) {
+		/* si c'est pas une collection on regarde si le clic est dans la forme */
+		else if (r.getBounds().contains(this.clicLoc)) {
 			System.out.println("Shape found");
 			s = r;
 		}
