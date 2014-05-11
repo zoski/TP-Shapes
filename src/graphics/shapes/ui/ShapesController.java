@@ -5,11 +5,8 @@ import graphics.shapes.Shape;
 import graphics.ui.Controller;
 
 import java.awt.Point;
-import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
-
-import graphics.shapes.ui.Editor;
 
 public class ShapesController extends Controller {
 
