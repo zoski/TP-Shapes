@@ -15,9 +15,11 @@ public class Editor extends JFrame {
 	SCollection model = new SCollection(new Point(10, 10));
 
 	/*
-	 * TODO SCollection avec rect.union done TODO Controleur TODO Rajouter un
-	 * point permettant de gerer le deplacement TODO Attributs de selection TODO
-	 * getTarget() dit s'il y à une forme (r�f�rence) ou rien s'il n'y à rien
+	 * TODO SCollection avec rect.union done 
+	 * TODO Controleur 
+	 * TODO Rajouter un point permettant de gerer le deplacement 
+	 * TODO Attributs de selection 
+	 * TODO getTarget() dit s'il y à une forme (r�f�rence) ou rien s'il n'y à rien
 	 * TODO Finir le draftman
 	 */
 
@@ -40,12 +42,11 @@ public class Editor extends JFrame {
 	private void buildModel() {
 		SText st = new SText(new Point(60, 30), "Hello");
 		st.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.RED));
-		st.addAttribute(new SelectionAttributes(true));
+		st.addAttribute(new SelectionAttributes());
 		this.model.add(st);
 
 		SRectangle sr = new SRectangle(new Point(70, 60), 20, 30);
-		sr.addAttribute(new ColorAttributes(true, true, Color.BLUE,
-				Color.YELLOW));
+		sr.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.YELLOW));
 		sr.addAttribute(new SelectionAttributes());
 		this.model.add(sr);
 		//
@@ -90,13 +91,9 @@ public class Editor extends JFrame {
 		this.model.add(sc);
 	}
 
-	public SCollection getModel() {
-		return this.model;
-	}
-
 	public static void main(String[] args) {
 		Editor self = new Editor();
-		self.pack();
-		self.setVisible(true);
+		self.pack();				/*Optimise la taille de la fenetre*/
+		self.setVisible(true);		/* affiche la fenetre */
 	}
 }

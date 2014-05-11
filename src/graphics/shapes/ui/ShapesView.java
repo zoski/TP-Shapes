@@ -28,7 +28,6 @@ public class ShapesView extends View {
 			return;
 
 		model.accept(this.draftman);
-
 	}
 
 	@Override
