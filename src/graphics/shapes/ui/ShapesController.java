@@ -28,6 +28,15 @@ public class ShapesController extends Controller {
 			}
 			this.getView().updateUI();
 		}
+		else {/* On parcourt le model et on déselect toutes les shape */
+			Iterator<Shape> it = (((SCollection) super.getModel()).getMap()).values().iterator();
+
+			// on parcours la map
+			while (it.hasNext()) {
+				it.next().unSelect();
+			}
+			this.getView().updateUI();
+		}
 	}
 
 	public void mouseReleased(MouseEvent e) {
@@ -37,6 +46,7 @@ public class ShapesController extends Controller {
 	public void mouseClicked(MouseEvent e) {
 		this.clicLoc = new Point(e.getX(), e.getY());
 		Shape s = this.getTarget();
+		System.out.println(s);
 		if (s != null) {
 			System.out.println("Shape detected");
 			s.select();
@@ -84,8 +94,9 @@ public class ShapesController extends Controller {
 
 		/* si c'est pas une collection on regarde si le clic est dans la forme */
 		else if (r.getBounds().contains(this.clicLoc)) {
-			System.out.println("Shape found");
 			s = r;
+			System.out.println("Shape found "+s);
+			return s;
 		}
 
 		return s;
