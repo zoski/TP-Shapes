@@ -18,9 +18,9 @@ public class Editor extends JFrame
 	/*
 	 * TODO SCollection avec rect.union done
 	 * TODO Controleur
-	 * TODO Rajouter un point permettant de gérer le déplacement
-	 * TODO Attributs de sélection
-	 * TODO getTarget() dit s'il y Ã  une forme (référence) ou rien s'il n'y Ã  rien
+	 * TODO Rajouter un point permettant de gerer le deplacement
+	 * TODO Attributs de selection
+	 * TODO getTarget() dit s'il y Ã  une forme (rï¿½fï¿½rence) ou rien s'il n'y Ã  rien
 	 * TODO Finir le draftman
 	 *  
 	 */

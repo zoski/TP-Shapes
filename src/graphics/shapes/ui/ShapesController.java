@@ -28,6 +28,7 @@ public class ShapesController extends Controller{
 		Shape s = this.getTarget();
 		if(s != null)
 		{
+			System.out.println("Shape found :" +s+"is selected");
 			s.select();
 		}
 	}
@@ -42,7 +43,7 @@ public class ShapesController extends Controller{
 		this.clicLoc = new Point(e.getX(),e.getY());
 		Shape s = this.getTarget();
 		if(s != null)
-		{
+		{	System.out.println("Shape detected");
 			s.select();
 		}
 	}
