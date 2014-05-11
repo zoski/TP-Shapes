@@ -37,17 +37,17 @@ public class ShapeDraftman implements ShapeVisitor {
 		ColorAttributes ca = (ColorAttributes) r
 				.getAttribute(ColorAttributes.ID);
 
-		// SelectionAttributes sa = (SelectionAttributes)
-		// r.getAttribute(SelectionAttributes.ID);
-		// if(sa.isSelected()){
-		// g.fillRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
-		// g.fillRect(r.getLoc().x-rect.width, r.getLoc().y+rect.height, 8, 8);
-		// }
+		 SelectionAttributes sa = (SelectionAttributes)
+		 r.getAttribute(SelectionAttributes.ID);
+		 if(sa.isSelected()){
+			 g.fillRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
+			 g.fillRect(r.getLoc().x+rect.width-4, r.getLoc().y+rect.height-4, 8, 8);
+		 }
 
 		/* Verifions si il y des attributs */
 		if (ca == null)
 			ca = DEFAULT_COLOR_ATTRIBUTES; /*
-											 * S'il n'y en a� pas on met ceux du
+											 * S'il n'y en a pas on met ceux du
 											 * constructeur par defaut
 											 */
 
