@@ -16,8 +16,6 @@ public class ShapesController extends Controller {
 		super(newModel);
 	}
 
-	/* Il est necessaire de redefinir les actions voir pdf */
-
 	public void mousePressed(MouseEvent e) {
 		System.out.println("mouse pressed");
 		this.clicLoc = new Point(e.getX(), e.getY());
@@ -83,5 +81,6 @@ public class ShapesController extends Controller {
 		Shape s = getTarget();
 		s.translate(x, y);
 	}
+	
 
 }

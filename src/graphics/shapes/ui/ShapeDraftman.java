@@ -101,7 +101,6 @@ public class ShapeDraftman implements ShapeVisitor {
 		System.out.println("I'm drawing a SText :" + t.getBounds());
 
 		Rectangle bound = t.getBounds();
-		//bound.translate(0, -bound.width / 2);
 		ColorAttributes ca = (ColorAttributes) t.getAttribute(ColorAttributes.ID);
 		Point loc = t.getLoc();
 

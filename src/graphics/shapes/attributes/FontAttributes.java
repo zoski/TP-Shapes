@@ -27,12 +27,11 @@ public class FontAttributes extends Attribute {
 	}
 
 	public Rectangle getBounds(String s) {
-		// TODO Le rectangle recupere est a la bonne taille mais au coordonnee
-		// 0,0 il faut le deplacer avec translate.
+		// Le rectangle recupere est a la bonne taille mais au coordonnee
+		// 0,0 il faut le deplacer avec translate. C'est fait dans le getBound du SText
 		FontRenderContext frc = DEFAULT_GRAPHICS.getFontRenderContext();
 		Rectangle bound = font.getStringBounds(s, frc).getBounds();
 		bound.translate(bound.x, bound.y);
-		System.out.println("On déplace le getbound du Stext"+ bound);
 		return bound;
 	}
 
