@@ -23,6 +23,7 @@ public class ShapesController extends Controller {
 		if (s != null) {
 			System.out.println("Shape found :" + s + "is selected");
 			s.select();
+			this.getView().updateUI();
 		}
 	}
 
@@ -36,6 +37,7 @@ public class ShapesController extends Controller {
 		if (s != null) {
 			System.out.println("Shape detected");
 			s.select();
+			this.getView().updateUI();
 		}
 	}
 
@@ -46,6 +48,7 @@ public class ShapesController extends Controller {
 		Shape s = getTarget();
 		if ((s != null) && s.isSelected()) {
 			translateSelected(x, y);
+			this.getView().updateUI();
 		}
 	}
 
@@ -81,6 +84,8 @@ public class ShapesController extends Controller {
 		Shape s = getTarget();
 		s.translate(x, y);
 	}
+	
+
 	
 
 }

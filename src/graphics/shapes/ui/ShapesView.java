@@ -34,4 +34,6 @@ public class ShapesView extends View {
 	public Controller defaultController(Object model) {
 		return new ShapesController(model);
 	}
+	
+	
 }

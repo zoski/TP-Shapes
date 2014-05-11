@@ -159,4 +159,5 @@ public class ShapeDraftman implements ShapeVisitor {
 			}
 		}
 	}
+
 }
