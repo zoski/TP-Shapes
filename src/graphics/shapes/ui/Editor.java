@@ -40,12 +40,12 @@ public class Editor extends JFrame {
 	}
 
 	private void buildModel() {
-		SText st = new SText(new Point(60, 30), "Hello");
+		SText st = new SText(new Point(60, 30), "Hello how are you ?");
 		st.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.RED));
 		st.addAttribute(new SelectionAttributes());
 		this.model.add(st);
 
-		SRectangle sr = new SRectangle(new Point(70, 60), 20, 30);
+		SRectangle sr = new SRectangle(new Point(170, 60), 20, 30);
 		sr.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.YELLOW));
 		sr.addAttribute(new SelectionAttributes(true));
 		this.model.add(sr);
@@ -66,7 +66,7 @@ public class Editor extends JFrame {
 		// r.addAttributes(new SelectionAttributes());
 		// this.model.add(r);
 		//
-		SCircle c = new SCircle(new Point(100, 100), 10);
+		SCircle c = new SCircle(new Point(200, 10), 10);
 		c.addAttribute(new ColorAttributes(false, true, Color.BLUE, Color.BLUE));
 		c.addAttribute(new SelectionAttributes(true));
 		this.model.add(c);
@@ -84,7 +84,7 @@ public class Editor extends JFrame {
 		r.addAttribute(new ColorAttributes(true, true, Color.RED, Color.BLUE));
 		r.addAttribute(new SelectionAttributes());
 		sc.add(r);
-		SCircle c2 = new SCircle(new Point(150, 100), 50);
+		SCircle c2 = new SCircle(new Point(15, 10), 10);
 		c2.addAttribute(new ColorAttributes(true, true, Color.RED, Color.DARK_GRAY));
 		c2.addAttribute(new SelectionAttributes());
 		sc.add(c2);
