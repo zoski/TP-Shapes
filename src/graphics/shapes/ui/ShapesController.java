@@ -39,14 +39,6 @@ public class ShapesController extends Controller {
 			s.select();
 			this.getView().updateUI();
 		}
-		else {/* On parcourt le model et on déselect toutes les shape */
-			Iterator<Shape> it = (((SCollection) super.getModel()).getMap()).values().iterator();
-
-			// on parcours la map
-			while (it.hasNext()) {
-				it.next().unSelect();
-			}
-		}
 	}
 
 	public void mouseDragged(MouseEvent e) {
