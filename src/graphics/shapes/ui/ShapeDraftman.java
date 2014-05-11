@@ -40,16 +40,14 @@ public class ShapeDraftman implements ShapeVisitor {
 		 SelectionAttributes sa = (SelectionAttributes)
 		 r.getAttribute(SelectionAttributes.ID);
 		 if(sa.isSelected()){
+			 g.setColor(Color.GRAY);
 			 g.fillRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
 			 g.fillRect(r.getLoc().x+rect.width-4, r.getLoc().y+rect.height-4, 8, 8);
 		 }
 
 		/* Verifions si il y des attributs */
-		if (ca == null)
-			ca = DEFAULT_COLOR_ATTRIBUTES; /*
-											 * S'il n'y en a pas on met ceux du
-											 * constructeur par defaut
-											 */
+		if (ca == null)/* S'il n'y en a pas on met ceux du constructeur par defaut */
+			ca = DEFAULT_COLOR_ATTRIBUTES; 
 
 		/* S'il y a on applique */
 		if (ca.filled) { // Remplissage
@@ -89,12 +87,12 @@ public class ShapeDraftman implements ShapeVisitor {
 			g.setColor(ca.strokedColor);
 			g.drawOval(rect.x, rect.y, rect.width, rect.height);
 		}
-		// if(sa.isSelected())
-		// {
-		// g.setColor(Color.GRAY);
-		// g.fillRect(rect.x-4, rect.y-4, 8, 8);
-		// g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
-		// }
+		
+		if(sa.isSelected()){
+		g.setColor(Color.GRAY);
+		g.fillRect(rect.x-4, rect.y-4, 8, 8);
+		g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
+		}
 	}
 
 	public void visitText(SText t) {
@@ -141,13 +139,15 @@ public class ShapeDraftman implements ShapeVisitor {
 		Map<String, Shape> tmp = co.getMap();
 		Rectangle rect = co.getBounds();
 
-		// SelectionAttributes sa = (SelectionAttributes)
-		// co.getAttribute(SelectionAttributes.ID);
-		// if(sa.isSelected()){
-		// g.setColor(Color.GRAY);
-		// g.drawRect(rect.x-4, rect.y-4, 8, 8);
-		// g.drawRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
-		// }
+		SelectionAttributes sa = (SelectionAttributes)
+		co.getAttribute(SelectionAttributes.ID);
+		 
+//		if(sa.isSelected()){
+//		g.setColor(Color.GRAY);
+//		g.drawRect(rect.x-4, rect.y-4, 8, 8);
+//		g.drawRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
+//		}
+		
 		if (tmp.isEmpty()) {// collection vide on ne fait rien
 		} else {
 			for (Iterator<Shape> i = tmp.values().iterator(); i.hasNext();) {// on
