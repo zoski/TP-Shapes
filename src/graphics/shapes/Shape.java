@@ -11,37 +11,39 @@ import java.util.TreeMap;
 public abstract class Shape {
 	private Map<String, Attribute> attributes;
 	Point location;
-	
 
 	public Shape() {
 		this.attributes = new TreeMap<String, Attribute>();
 	}
-	
+
 	public void addAttribute(Attribute a) {
-		this.attributes.put(a.getId(),a);
+		this.attributes.put(a.getId(), a);
 	}
-	
+
 	public Attribute getAttribute(String id) {
 		return (Attribute) this.attributes.get(id);
 	}
-	
-	public void select()
-	{
+
+	public void select() {
 		SelectionAttributes sa = (SelectionAttributes) getAttribute(SelectionAttributes.ID);
 		sa.select();
 	}
-	
-	public boolean isSelected()
-	{
+
+	public boolean isSelected() {
 		SelectionAttributes sa = (SelectionAttributes) getAttribute(SelectionAttributes.ID);
 		return sa.isSelected();
 	}
-	
+
 	public abstract Point getLoc();
-	public abstract void setLoc(Point p);	
+
+	public abstract void setLoc(Point p);
+
 	public abstract void translate(int dx, int dy);
+
 	public abstract Rectangle getBounds();
+
 	public abstract void accept(ShapeVisitor v);
+
 	public abstract String getID();
-	
+
 }

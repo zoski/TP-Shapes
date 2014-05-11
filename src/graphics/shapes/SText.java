@@ -5,17 +5,17 @@ import graphics.shapes.attributes.FontAttributes;
 import java.awt.Point;
 import java.awt.Rectangle;
 
-public class SText extends Shape{
+public class SText extends Shape {
 	private Point loc;
 	private String text;
 	private FontAttributes fa;
-	private final  String ID="Text";
-	
+	private final String ID = "Text";
+
 	public SText(Point loc, String text) {
 		this.loc = loc;
-		this.text= text;
+		this.text = text;
 		this.fa = new FontAttributes();
-		System.out.println("SText created at : ("+loc.x+", "+loc.y+")" );
+		System.out.println("SText created at : (" + loc.x + ", " + loc.y + ")");
 	}
 
 	@Override
@@ -25,7 +25,7 @@ public class SText extends Shape{
 
 	@Override
 	public void setLoc(Point loc) {
-		this.loc=loc;
+		this.loc = loc;
 	}
 
 	@Override
@@ -35,7 +35,8 @@ public class SText extends Shape{
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle(loc.x, loc.y, fa.getBounds(this.text).width,fa.getBounds(this.text).height);
+		return new Rectangle(loc.x, loc.y, fa.getBounds(this.text).width,
+				fa.getBounds(this.text).height);
 	}
 
 	@Override
