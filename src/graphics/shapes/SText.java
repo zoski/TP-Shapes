@@ -35,8 +35,7 @@ public class SText extends Shape {
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle(loc.x, loc.y, fa.getBounds(this.text).width,
-				fa.getBounds(this.text).height);
+		return new Rectangle(loc.x, loc.y-fa.getBounds(this.text).height, fa.getBounds(this.text).width, fa.getBounds(this.text).height);
 	}
 
 	@Override

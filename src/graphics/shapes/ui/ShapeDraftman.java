@@ -100,10 +100,9 @@ public class ShapeDraftman implements ShapeVisitor {
 	public void visitText(SText t) {
 		System.out.println("I'm drawing a SText :" + t.getBounds());
 
-		Rectangle rect = t.getBounds();
-		rect.translate(0, -rect.width / 2);
-		ColorAttributes ca = (ColorAttributes) t
-				.getAttribute(ColorAttributes.ID);
+		Rectangle bound = t.getBounds();
+		//bound.translate(0, -bound.width / 2);
+		ColorAttributes ca = (ColorAttributes) t.getAttribute(ColorAttributes.ID);
 		Point loc = t.getLoc();
 
 		/* Verifions si il y des attributs */
@@ -116,20 +115,19 @@ public class ShapeDraftman implements ShapeVisitor {
 
 		if (ca.filled) {
 			g.setColor(ca.filledColor);
-			g.fillRect(rect.x, rect.y, rect.width, rect.height);
+			g.fillRect(bound.x, bound.y, bound.width, bound.height);
 		}
 
 		if (ca.stroked) {
 			g.setColor(ca.strokedColor);
-			g.drawRect(rect.x, rect.y, rect.width, rect.height);
+			g.drawRect(bound.x, bound.y, bound.width, bound.height);
 		}
 
-		SelectionAttributes sa = (SelectionAttributes) t
-				.getAttribute(SelectionAttributes.ID);
+		SelectionAttributes sa = (SelectionAttributes) t.getAttribute(SelectionAttributes.ID);
 		if (sa.isSelected()) {
 			g.setColor(Color.GRAY);
-			g.fillRect(rect.x - 4, rect.y - 4, 8, 8);
-			g.fillRect(rect.x + rect.width - 4, rect.y + rect.height - 4, 8, 8);
+			g.fillRect(bound.x - 4, bound.y - 4, 8, 8);
+			g.fillRect(bound.x + bound.width - 4, bound.y + bound.height - 4, 8, 8);
 		}
 
 		g.setFont(fa.font);
