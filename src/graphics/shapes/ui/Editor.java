@@ -37,38 +37,15 @@ public class Editor extends JFrame {
 		this.model.add(st);
 
 		SRectangle sr = new SRectangle(new Point(170, 60), 20, 30);
-		sr.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.YELLOW));
+		sr.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.GREEN));
 		sr.addAttribute(new SelectionAttributes());
 		this.model.add(sr);
-		//
-		// SCircle sc = new SCircle(new Point(20,80), 20);
-		// sc.addAttribute(new ColorAttributes(true, true, Color.GREEN,
-		// Color.CYAN));
-		// this.model.add(sc);
-		//
-		System.out.println(model);
-
-		// this.model = new SCollection();
-		// this.model.addAttributes(new SelectionAttributes());
-		//
-		// SRectangle r = new SRectangle(new Point(10,10),20,30);
-		// r.addAttributes(new
-		// ColorAttributes(true,false,Color.BLUE,Color.BLUE));
-		// r.addAttributes(new SelectionAttributes());
-		// this.model.add(r);
-		//
-		SCircle c = new SCircle(new Point(200, 10), 10);
-		c.addAttribute(new ColorAttributes(false, true, Color.BLUE, Color.BLUE));
+		
+		SCircle c = new SCircle(new Point(200, 150), 10);
+		c.addAttribute(new ColorAttributes(true, true, Color.BLUE, Color.YELLOW));
 		c.addAttribute(new SelectionAttributes());
 		this.model.add(c);
-		//
-		// SText t= new SText(new Point(100,100),"hello");
-		// t.addAttributes(new
-		// ColorAttributes(true,true,Color.YELLOW,Color.BLUE));
-		// t.addAttributes(new FontAttributes());
-		// t.addAttributes(new SelectionAttributes());
-		// this.model.add(t);
-		//
+		
 		SCollection sc = new SCollection(new Point(20, 20));
 		sc.addAttribute(new SelectionAttributes(true));
 		SRectangle r = new SRectangle(new Point(20, 30), 30, 30);
