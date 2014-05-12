@@ -29,20 +29,21 @@ public class SCollection extends Shape {
 
 	@Override
 	public void translate(int dx, int dy) {
-		this.translate(dx, dy);
+		Iterator<Shape> i = this.collection.values().iterator();
+		while(i.hasNext()) {
+			i.next().translate(dx, dy);
+		}
 	}
 
 	@Override
 	public Rectangle getBounds() {
 		Iterator<Shape> i = this.collection.values().iterator();
 		Rectangle bound = new Rectangle();
-		bound = i.next().getBounds();// On place le getBound de la premiere
-										// forme de la map comme point de départ
+		bound = i.next().getBounds(); /*On place le getBound de la premiere  forme de la map comme point de départ*/
 
 		for (Iterator<Shape> j = collection.values().iterator(); j.hasNext();) { // on parcourt la Map
 			bound = j.next().getBounds().union(bound); // On fait l'union successive de toute les shapes de la map
 		}
-
 		return bound;
 	}
 
@@ -66,6 +67,10 @@ public class SCollection extends Shape {
 
 	public String toString() {
 		return this.getBounds().toString();
+	}
+
+	public Iterator<Shape> iterator() {
+		return getMap().values().iterator();
 	}
 
 }

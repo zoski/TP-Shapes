@@ -136,13 +136,13 @@ public class ShapeDraftman implements ShapeVisitor {
 		Map<String, Shape> tmp = co.getMap();
 		Rectangle rect = co.getBounds();
 
-		SelectionAttributes sa = (SelectionAttributes)
-		co.getAttribute(SelectionAttributes.ID);
+		SelectionAttributes sa = (SelectionAttributes)co.getAttribute(SelectionAttributes.ID);
 		 
 //		if(sa.isSelected()){
-//		g.setColor(Color.GRAY);
-//		g.drawRect(rect.x-4, rect.y-4, 8, 8);
-//		g.drawRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
+////			System.out.println("Prout");
+////			g.setColor(Color.GRAY);
+////			g.fillRect(rect.x-4, rect.y-4, 8, 8);
+////			g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
 //		}
 		
 		if (tmp.isEmpty()) {// collection vide on ne fait rien

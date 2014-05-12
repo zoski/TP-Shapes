@@ -19,7 +19,7 @@ public class ShapesController extends Controller {
 	public void mousePressed(MouseEvent e) {
 		System.out.println("mouse pressed");
 		this.clicLoc = new Point(e.getX(), e.getY());
-		Shape s = this.getTarget();
+		Shape s = this.getTarget(clicLoc);
 		if (s != null) {
 			System.out.println("Shape found :" + s + "is selected");
 			s.select();
@@ -45,10 +45,10 @@ public class ShapesController extends Controller {
 
 	public void mouseClicked(MouseEvent e) {
 		this.clicLoc = new Point(e.getX(), e.getY());
-		Shape s = this.getTarget();
-		System.out.println(s);
+		Shape s = this.getTarget(clicLoc);
+//		System.out.println(s);
 		if (s != null) {
-			System.out.println("Shape detected");
+			System.out.println("Shape detected" +s);
 			s.select();
 			if (s.isSelected()){
 				System.out.println("shape selected");
@@ -70,7 +70,7 @@ public class ShapesController extends Controller {
 		int x = e.getX();
 		int y = e.getY();
 		System.out.println("mouse dragged");
-		Shape s = getTarget();
+		Shape s = getTarget(clicLoc);
 		if ((s != null) && s.isSelected()) {
 			translateSelected(x-this.clicLoc.x, y-this.clicLoc.y);
 			this.getView().updateUI();
@@ -78,37 +78,47 @@ public class ShapesController extends Controller {
 		}
 	}
 
-	public Shape getTargetArg(Shape r) {
-		Shape s = null;
-
-		// si la shape est une collection on parcours la collection et on
-		// rappelle getTarget()
-		if (r instanceof SCollection) {
-			Iterator<Shape> it = (((SCollection) r).getMap()).values().iterator();
-
-			// on parcours la map
-			while (it.hasNext()) {
-				s = getTargetArg(it.next());
-			}
-		}
-
-		/* si c'est pas une collection on regarde si le clic est dans la forme */
-		else if (r.getBounds().contains(this.clicLoc)) {
-			s = r;
-			System.out.println("Shape found "+s);
-			return s;
-		}
-
-		return s;
-	}
-
-	public Shape getTarget() {
-		/* Doit retourner la forme sur laquelle on clic ou rien */
-		return getTargetArg((Shape) super.getModel());
-	}
+	 private Shape getTarget(Point pos){
+	        for(Iterator<Shape> it = ((SCollection) this.getModel()).iterator(); it.hasNext();){
+	            Shape pointer = it.next();
+	            if(pointer.getBounds().contains(pos)){
+	                return pointer;
+	            }
+	        }
+	        return null;
+	    }
+	
+	
+//	public Shape getTargetArg(Shape r) {
+//		Shape s = null;
+//
+//		/*si la shape est une collection on parcours la collection et on rappelle getTarget()*/
+//		if (r instanceof SCollection) {
+//			Iterator<Shape> it = (((SCollection) r).getMap()).values().iterator();
+//
+//			// on parcours la map
+//			while (it.hasNext()) {
+//				s = getTargetArg(it.next());
+//			}
+//		}
+//
+//		/* si c'est pas une collection on regarde si le clic est dans la forme */
+//		else if (r.getBounds().contains(this.clicLoc)) {
+//			s = r;
+//			System.out.println("Shape found "+s);
+//			return s;
+//		}
+//
+//		return s;
+//	}
+//
+//	public Shape getTarget() {
+//		/* Doit retourner la forme sur laquelle on clic ou rien */
+//		return getTargetArg((Shape) super.getModel());
+//	}
 
 	public void translateSelected(int x, int y) {
-		Shape s = getTarget();
+		Shape s = getTarget(clicLoc);
 		s.translate(x, y);
 	}
 	
