@@ -92,35 +92,11 @@ public class ShapesController extends Controller {
 	        return null;
 	    }
 	
-	
-//	public Shape getTargetArg(Shape r) {
-//		Shape s = null;
-//
-//		/*si la shape est une collection on parcours la collection et on rappelle getTarget()*/
-//		if (r instanceof SCollection) {
-//			Iterator<Shape> it = (((SCollection) r).getMap()).values().iterator();
-//
-//			// on parcours la map
-//			while (it.hasNext()) {
-//				s = getTargetArg(it.next());
-//			}
-//		}
-//
-//		/* si c'est pas une collection on regarde si le clic est dans la forme */
-//		else if (r.getBounds().contains(this.clicLoc)) {
-//			s = r;
-//			System.out.println("Shape found "+s);
-//			return s;
-//		}
-//
-//		return s;
-//	}
-//
-//	public Shape getTarget() {
-//		/* Doit retourner la forme sur laquelle on clic ou rien */
-//		return getTargetArg((Shape) super.getModel());
-//	}
 
+	public boolean shiftDown(){
+		return false;
+	}
+	 
 	public void translateSelected(int x, int y) {
 		Shape s = getTarget(clicLoc);
 		s.translate(x, y);
