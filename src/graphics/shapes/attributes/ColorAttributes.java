@@ -18,7 +18,8 @@ public class ColorAttributes extends Attribute {
 		this.filled = false;
 	}
 
-	public ColorAttributes(boolean strocked, boolean filled, Color strockedColor, Color filledColor) {
+	public ColorAttributes(boolean strocked, boolean filled,
+			Color strockedColor, Color filledColor) {
 		this.strokedColor = strockedColor;
 		this.filledColor = filledColor;
 		this.stroked = strocked;

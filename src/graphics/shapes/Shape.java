@@ -39,6 +39,7 @@ public abstract class Shape {
 		SelectionAttributes sa = (SelectionAttributes) getAttribute(SelectionAttributes.ID);
 		sa.unselect();
 	}
+
 	public abstract Point getLoc();
 
 	public abstract void setLoc(Point p);

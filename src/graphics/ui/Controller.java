@@ -6,8 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-public class Controller implements MouseListener, MouseMotionListener,
-		KeyListener {
+public class Controller implements MouseListener, MouseMotionListener, KeyListener {
 	protected Object model;
 	private View view;
 

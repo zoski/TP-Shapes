@@ -30,19 +30,20 @@ public class ShapeDraftman implements ShapeVisitor {
 	@Override
 	public void visitRectangle(SRectangle r) {
 
-		System.out.println("I'm drawing a SRectangle : " + r.getBounds());
-
 		// Dessine
 		Rectangle rect = r.getBounds();
-		ColorAttributes ca = (ColorAttributes) r.getAttribute(ColorAttributes.ID);
+		ColorAttributes ca = (ColorAttributes) r
+				.getAttribute(ColorAttributes.ID);
 
-		 SelectionAttributes sa = (SelectionAttributes)r.getAttribute(SelectionAttributes.ID);
-		 
-
+		SelectionAttributes sa = (SelectionAttributes) r
+				.getAttribute(SelectionAttributes.ID);
 
 		/* Verifions si il y des attributs */
-		if (ca == null)/* S'il n'y en a pas on met ceux du constructeur par defaut */
-			ca = DEFAULT_COLOR_ATTRIBUTES; 
+		if (ca == null)/*
+						 * S'il n'y en a pas on met ceux du constructeur par
+						 * defaut
+						 */
+			ca = DEFAULT_COLOR_ATTRIBUTES;
 
 		/* S'il y a on applique */
 		if (ca.filled) { // Remplissage
@@ -54,20 +55,22 @@ public class ShapeDraftman implements ShapeVisitor {
 			g.setColor(ca.strokedColor);
 			g.drawRect(rect.x, rect.y, rect.width, rect.height);
 		}
-		if(sa.isSelected()){
+		if (sa.isSelected()) {
 			g.setColor(Color.GRAY);
-			g.fillRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
-			g.fillRect(r.getLoc().x+rect.width-4, r.getLoc().y+rect.height-4, 8, 8);
+			g.fillRect(r.getLoc().x - 4, r.getLoc().y - 4, 8, 8);
+			g.fillRect(r.getLoc().x + rect.width - 4, r.getLoc().y
+					+ rect.height - 4, 8, 8);
 		}
 	}
 
 	@Override
 	public void visitCircle(SCircle c) {
-		System.out.println("I'm drawing a SCircle :" + c.getBounds());
-
+		
 		Rectangle rect = c.getBounds();
-		ColorAttributes ca = (ColorAttributes) c.getAttribute(ColorAttributes.ID);
-		SelectionAttributes sa = (SelectionAttributes) c.getAttribute(SelectionAttributes.ID);
+		ColorAttributes ca = (ColorAttributes) c
+				.getAttribute(ColorAttributes.ID);
+		SelectionAttributes sa = (SelectionAttributes) c
+				.getAttribute(SelectionAttributes.ID);
 		/* Verifions si il y des attributs */
 		if (ca == null)
 			ca = DEFAULT_COLOR_ATTRIBUTES; /*
@@ -85,19 +88,18 @@ public class ShapeDraftman implements ShapeVisitor {
 			g.setColor(ca.strokedColor);
 			g.drawOval(rect.x, rect.y, rect.width, rect.height);
 		}
-		
-		if(sa.isSelected()){
-		g.setColor(Color.GRAY);
-		g.fillRect(rect.x-4, rect.y-4, 8, 8);
-		g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
+
+		if (sa.isSelected()) {
+			g.setColor(Color.GRAY);
+			g.fillRect(rect.x - 4, rect.y - 4, 8, 8);
+			g.fillRect(rect.x + rect.width - 4, rect.y + rect.height - 4, 8, 8);
 		}
 	}
 
 	public void visitText(SText t) {
-		System.out.println("I'm drawing a SText :" + t.getBounds());
-
 		Rectangle bound = t.getBounds();
-		ColorAttributes ca = (ColorAttributes) t.getAttribute(ColorAttributes.ID);
+		ColorAttributes ca = (ColorAttributes) t
+				.getAttribute(ColorAttributes.ID);
 		Point loc = t.getLoc();
 
 		/* Verifions si il y des attributs */
@@ -118,11 +120,13 @@ public class ShapeDraftman implements ShapeVisitor {
 			g.drawRect(bound.x, bound.y, bound.width, bound.height);
 		}
 
-		SelectionAttributes sa = (SelectionAttributes) t.getAttribute(SelectionAttributes.ID);
+		SelectionAttributes sa = (SelectionAttributes) t
+				.getAttribute(SelectionAttributes.ID);
 		if (sa.isSelected()) {
 			g.setColor(Color.GRAY);
 			g.fillRect(bound.x - 4, bound.y - 4, 8, 8);
-			g.fillRect(bound.x + bound.width - 4, bound.y + bound.height - 4, 8, 8);
+			g.fillRect(bound.x + bound.width - 4, bound.y + bound.height - 4,
+					8, 8);
 		}
 
 		g.setFont(fa.font);
@@ -132,19 +136,18 @@ public class ShapeDraftman implements ShapeVisitor {
 
 	@Override
 	public void visitCollection(SCollection co) {
-		System.out.println("I'm drawing a SCollection :" + co.getBounds());
-
 		Map<String, Shape> tmp = co.getMap();
 		Rectangle rect = co.getBounds();
 
-		SelectionAttributes sa = (SelectionAttributes)co.getAttribute(SelectionAttributes.ID);
-		 
-//		if(sa.isSelected()){			
-//			g.setColor(Color.GRAY);
-//			g.fillRect(rect.x-4, rect.y-4, 8, 8);
-//			g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
-//		}
-		
+		SelectionAttributes sa = (SelectionAttributes) co
+				.getAttribute(SelectionAttributes.ID);
+
+		// if(sa.isSelected()){
+		// g.setColor(Color.GRAY);
+		// g.fillRect(rect.x-4, rect.y-4, 8, 8);
+		// g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
+		// }
+
 		if (tmp.isEmpty()) {// collection vide on ne fait rien
 		} else {
 			for (Iterator<Shape> i = tmp.values().iterator(); i.hasNext();) {// on
