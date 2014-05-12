@@ -5,6 +5,7 @@ import graphics.shapes.Shape;
 import graphics.ui.Controller;
 
 import java.awt.Point;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 
@@ -93,7 +94,7 @@ public class ShapesController extends Controller {
 	    }
 	
 
-	public boolean shiftDown(){
+	public boolean shiftDown(KeyEvent keypressed){
 		return false;
 	}
 	 
