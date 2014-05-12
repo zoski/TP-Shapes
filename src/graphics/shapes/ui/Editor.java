@@ -14,15 +14,6 @@ public class Editor extends JFrame {
 	ShapesView sview;
 	SCollection model = new SCollection(new Point(10, 10));
 
-	/*
-	 * TODO SCollection avec rect.union done 
-	 * TODO Controleur 
-	 * TODO Rajouter un point permettant de gerer le deplacement 
-	 * TODO Attributs de selection 
-	 * TODO getTarget() dit s'il y à une forme (r�f�rence) ou rien s'il n'y à rien
-	 * TODO Finir le draftman
-	 */
-
 	public Editor() {
 		super("Shapes Editor");
 
