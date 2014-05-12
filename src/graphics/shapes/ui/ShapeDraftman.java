@@ -38,11 +38,7 @@ public class ShapeDraftman implements ShapeVisitor {
 
 		 SelectionAttributes sa = (SelectionAttributes)r.getAttribute(SelectionAttributes.ID);
 		 
-		 if(sa.isSelected()){
-			 g.setColor(Color.GRAY);
-			 g.fillRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
-			 g.fillRect(r.getLoc().x+rect.width-4, r.getLoc().y+rect.height-4, 8, 8);
-		 }
+
 
 		/* Verifions si il y des attributs */
 		if (ca == null)/* S'il n'y en a pas on met ceux du constructeur par defaut */
@@ -57,6 +53,11 @@ public class ShapeDraftman implements ShapeVisitor {
 		if (ca.stroked) { // Contours
 			g.setColor(ca.strokedColor);
 			g.drawRect(rect.x, rect.y, rect.width, rect.height);
+		}
+		if(sa.isSelected()){
+			g.setColor(Color.GRAY);
+			g.fillRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
+			g.fillRect(r.getLoc().x+rect.width-4, r.getLoc().y+rect.height-4, 8, 8);
 		}
 	}
 
