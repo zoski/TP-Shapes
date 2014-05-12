@@ -84,7 +84,7 @@ public class Editor extends JFrame {
 		r.addAttribute(new ColorAttributes(true, true, Color.RED, Color.BLUE));
 		r.addAttribute(new SelectionAttributes());
 		sc.add(r);
-		SCircle c2 = new SCircle(new Point(15, 10), 10);
+		SCircle c2 = new SCircle(new Point(50, 70), 10);
 		c2.addAttribute(new ColorAttributes(true, true, Color.RED, Color.DARK_GRAY));
 		c2.addAttribute(new SelectionAttributes());
 		sc.add(c2);

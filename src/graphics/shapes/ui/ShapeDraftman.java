@@ -39,7 +39,7 @@ public class ShapeDraftman implements ShapeVisitor {
 		 SelectionAttributes sa = (SelectionAttributes)r.getAttribute(SelectionAttributes.ID);
 		 
 		 if(sa.isSelected()){
-			 g.setColor(Color.WHITE);
+			 g.setColor(Color.GRAY);
 			 g.fillRect(r.getLoc().x-4, r.getLoc().y-4, 8, 8);
 			 g.fillRect(r.getLoc().x+rect.width-4, r.getLoc().y+rect.height-4, 8, 8);
 		 }
@@ -86,7 +86,7 @@ public class ShapeDraftman implements ShapeVisitor {
 		}
 		
 		if(sa.isSelected()){
-		g.setColor(Color.WHITE);
+		g.setColor(Color.GRAY);
 		g.fillRect(rect.x-4, rect.y-4, 8, 8);
 		g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
 		}
@@ -119,7 +119,7 @@ public class ShapeDraftman implements ShapeVisitor {
 
 		SelectionAttributes sa = (SelectionAttributes) t.getAttribute(SelectionAttributes.ID);
 		if (sa.isSelected()) {
-			g.setColor(Color.WHITE);
+			g.setColor(Color.GRAY);
 			g.fillRect(bound.x - 4, bound.y - 4, 8, 8);
 			g.fillRect(bound.x + bound.width - 4, bound.y + bound.height - 4, 8, 8);
 		}
@@ -138,11 +138,10 @@ public class ShapeDraftman implements ShapeVisitor {
 
 		SelectionAttributes sa = (SelectionAttributes)co.getAttribute(SelectionAttributes.ID);
 		 
-//		if(sa.isSelected()){
-////			System.out.println("Prout");
-////			g.setColor(Color.GRAY);
-////			g.fillRect(rect.x-4, rect.y-4, 8, 8);
-////			g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
+//		if(sa.isSelected()){			
+//			g.setColor(Color.GRAY);
+//			g.fillRect(rect.x-4, rect.y-4, 8, 8);
+//			g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
 //		}
 		
 		if (tmp.isEmpty()) {// collection vide on ne fait rien
