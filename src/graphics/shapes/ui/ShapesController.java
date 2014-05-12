@@ -22,6 +22,10 @@ public class ShapesController extends Controller {
 		Shape s = this.getTarget(clicLoc);
 		if (s != null) {
 			System.out.println("Shape found :" + s + "is selected");
+			Iterator<Shape> i = ((SCollection) super.getModel()).getMap().values().iterator();
+			while(i.hasNext()){
+				i.next().unSelect();
+			}
 			s.select();
 			if (s.isSelected()){
 				System.out.println("shape selected");
