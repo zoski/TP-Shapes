@@ -47,7 +47,7 @@ public class Editor extends JFrame {
 		this.model.add(c);
 
 		SCollection sc = new SCollection(new Point(20, 20));
-		sc.addAttribute(new SelectionAttributes(true));
+		sc.addAttribute(new SelectionAttributes());
 		SRectangle r = new SRectangle(new Point(20, 30), 30, 30);
 		r.addAttribute(new ColorAttributes(true, true, Color.RED, Color.BLUE));
 		r.addAttribute(new SelectionAttributes());

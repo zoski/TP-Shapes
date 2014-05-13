@@ -142,11 +142,11 @@ public class ShapeDraftman implements ShapeVisitor {
 		SelectionAttributes sa = (SelectionAttributes) co
 				.getAttribute(SelectionAttributes.ID);
 
-		// if(sa.isSelected()){
-		// g.setColor(Color.GRAY);
-		// g.fillRect(rect.x-4, rect.y-4, 8, 8);
-		// g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
-		// }
+//		 if(sa.isSelected()){
+//		 g.setColor(Color.GRAY);
+//		 g.fillRect(rect.x-4, rect.y-4, 8, 8);
+//		 g.fillRect(rect.x+rect.width-4, rect.y+rect.height-4, 8, 8);
+//		 }
 
 		if (tmp.isEmpty()) {// collection vide on ne fait rien
 		} else {
