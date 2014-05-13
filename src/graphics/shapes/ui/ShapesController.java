@@ -51,7 +51,7 @@ public class ShapesController extends Controller {
 	public void mouseClicked(MouseEvent e) {
 		this.clicLoc = new Point(e.getX(), e.getY());
 		Shape s = this.getTarget(clicLoc);
-//		System.out.println(s);
+
 		if (s != null) {
 			System.out.println("Shape detected" +s);
 			s.select();
@@ -83,15 +83,15 @@ public class ShapesController extends Controller {
 		}
 	}
 
-	 private Shape getTarget(Point pos){
-	        for(Iterator<Shape> it = ((SCollection) this.getModel()).iterator(); it.hasNext();){
-	            Shape pointer = it.next();
-	            if(pointer.getBounds().contains(pos)){
-	                return pointer;
+	private Shape getTarget(Point pos){
+		for(Iterator<Shape> it = ((SCollection) this.getModel()).iterator(); it.hasNext();){
+			Shape pointer = it.next();
+				if(pointer.getBounds().contains(pos)){
+	            	return pointer;
 	            }
-	        }
-	        return null;
-	    }
+		 }
+		 return null;
+	}
 	
 
 	public boolean shiftDown(KeyEvent keypressed){
@@ -102,8 +102,5 @@ public class ShapesController extends Controller {
 		Shape s = getTarget(clicLoc);
 		s.translate(x, y);
 	}
-	
-
-	
 
 }
